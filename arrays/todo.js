@@ -5,6 +5,7 @@ const todos = [
   {text: "Study JavaScript", completed: true}, 
   {text: "Take katas", completed: true}]
 
+// To Remove a property.
 const deleteTodo = function (todos, todoText) {
   const index = todos.findIndex ( function (todo) {
   return todo.text.toLowerCase() === todoText.toLowerCase()
@@ -13,5 +14,16 @@ const deleteTodo = function (todos, todoText) {
     todos.splice(index, 1)
   }
 }
-deleteTodo(todos, "!!Make the bed")
+
+deleteTodo(todos, "Make the bed")
 console.log(todos)
+
+// Method filter. Filter the todos not completed
+
+const getThingsToDo = function (todos) {
+    return todos.filter( function (todo) {
+        return !todo.completed
+    })
+}
+
+console.log(getThingsToDo(todos))
