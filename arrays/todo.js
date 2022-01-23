@@ -15,7 +15,7 @@ const deleteTodo = function (todos, todoText) {
   }
 }
 
-deleteTodo(todos, "Make the bed")
+//deleteTodo(todos, "Make the bed")
 console.log(todos)
 
 // Method filter. Filter the todos not completed
@@ -27,3 +27,19 @@ const getThingsToDo = function (todos) {
 }
 
 console.log(getThingsToDo(todos))
+
+// Method SORT. Sort by properties.
+const sortTodos = function (todos) {
+  todos.sort ( function (a, b) {
+    if (!a.completed && b.completed) {
+      return -1
+    } else if (!b.completed && a.completed) {
+      return 1
+    } else {
+      return 0
+    }
+  })
+}
+
+sortTodos(todos)
+console.log(todos)
